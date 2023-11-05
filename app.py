@@ -3,11 +3,12 @@ import tensorflow as tf
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 import pandas as pd
+import json
 
 app = Flask(__name__)
 
 # Load the trained model
-model = tf.keras.models.load_model('education_classifier_model')
+model = tf.keras.models.load_model('education_classifier_model_v2')
 
 # Load the tokenizer and word index
 tokenizer = Tokenizer()
@@ -15,6 +16,10 @@ data = pd.read_csv('training_data.csv')
 texts = data['text'].tolist()
 tokenizer.fit_on_texts(texts)
 word_index = tokenizer.word_index
+
+# Load the label-to-index mapping
+with open('labels_mapping.json', 'r') as json_file:
+    label_to_index = json.load(json_file)
 
 # Define the maximum sequence length
 max_sequence_length = 10
@@ -28,10 +33,9 @@ def classify_text(text):
     # Make a prediction using the model
     prediction = model.predict(data)
 
-    # Map the prediction to a label
+    # Map the prediction to a label in their original order
     label_index = prediction.argmax()
-    labels = ['greeting', 'goodbye', 'creator', 'name', 'hours', 'greeting', 'course', 'fees', 'location', 'hostel', 'event', 'document', 'floors', 'syllabus', 'library', 'infrastructure', 'canteen', 'menu', 'placement', 'ithod', 'computerhod', 'extchod', 'principal', 'sem', 'admission', 'scholarship', 'facilities', 'college intake', 'uniform', 'committee', 'random', 'swear', 'vacation', 'sports', 'salutaion', 'task', 'ragging', 'hod']
-    predicted_label = labels[label_index]
+    predicted_label = [key for key, value in label_to_index.items() if value == label_index][0]
 
     return predicted_label
 
