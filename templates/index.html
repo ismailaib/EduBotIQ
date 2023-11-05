@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Education ChatBot</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Education ChatBot</h1>
+        <form method="POST" action="/classify">
+            <div class="form-group">
+                <label for="text">Enter a text:</label>
+                <input type="text" class="form-control" name="text" id="text" placeholder="Enter text here" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Classify</button>
+        </form>
+        <br>
+        <div id="result" class="mt-3"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $('form').on('submit', function (e) {
+                e.preventDefault();
+                $.ajax({
+                    type: 'POST',
+                    url: '/classify',
+                    data: $('form').serialize(),
+                    success: function (response) {
+                        $('#result').html('Predicted Category: ' + response.result);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

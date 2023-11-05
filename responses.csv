@@ -1,0 +1,50 @@
+tag,response
+greeting,Hello!
+greeting,Good to see you again!
+greeting,"Hi there, how can I help?"
+goodbye,Sad to see you go :(
+goodbye,Talk to you later
+goodbye,Goodbye!
+goodbye,Come back soon
+creator,College students
+name,You can call me Mind Reader.
+name,I'm Mind Reader
+name,I am a Chatbot.
+name,I am your helper
+hours,College is open 8am-5pm Monday-Saturday!
+number,You can contact at: NUMBER
+course,"Our university offers Information Technology, computer Engineering, Mechanical engineering,Chemical engineering, Civil engineering and extc Engineering."
+fees,"For Fee detail visit <a target=""_blank"" href=""LINK""> here</a>"
+location,"<a target=""_blank"" href=""ADD YOU GOOGLE MAP LINK HERE""> here</a>"
+hostel,"For hostel detail visit <a target=""_blank"" href=""ADD YOUR HOSTEL DETAIL PDF LINK OR ANY INFORMATION LINK OR ADD YOU OWN ANSWERS""> here</a>"
+event,"For event detail visit <a target=""_blank"" href=""ADD YOUR FUNCTIONS LINK OR YOUR OWN RESPONSE""> here</a>"
+document,"To know more about document required visit <a target=""_blank"" href=""ADD LINK OF ADMISSION GUIDANCE DOCUMENT FROM YOUR UNIVERSITY WEBSITE""> here</a>"
+floors,My College has total 2 floors 
+syllabus,"Timetable provide direct to the students OR To know about syllabus visit <a target=""_blank"" href=""TIMETABLE LINK""> here</a>"
+library,"There is one huge and spacious library.timings are 8am to 6pm and for more visit <a target=""blank"" href=""ADD LIBRARY DETAIL LINK"">here</a>"
+infrastructure,Our University has Excellent Infrastructure. Campus is clean. Good IT Labs With Good Speed of Internet connection
+canteen,Our university has canteen with variety of food available
+menu,"we serve Franky, Locho, Alu-puri, Kachori, Khavsa, Thaali and many more on menu"
+placement,"To know about placement visit <a target=""_blank"" href=""PLACEMENT INFORMATION LINK FROM YOUR UNIVERSITY WEBSITE IF THEY HAVE"">here</a>"
+ithod,All engineering departments have only one hod XYZ who available on (Place name)
+computerhod,All engineering departments have only one hod XYZ who available on (PLACE NAME)
+extchod,Different school wise hod are different.So be more clear with your school or department
+principal,XYZ is college principal and if you need any help then call your branch hod first.That is more appropriate
+sem,"Here is the Academic Calendar  <a target=""_blank"" href=""YOUR ACADEMIC CALENDER"">website</a>"
+admission,"Application can also be submitted online through the Unversity's  <a target=""_blank"" href=""LINK OF ADMISSION DOCUMENT"">website</a>"
+scholarship,"Many government scholarships are supported by our university. For details and updates visit <a target=""_blank"" href=""(SCHOLARSHIP DETAILS LINK)"">here</a>"
+facilities,"Our university's Engineering department provides fully AC Lab with internet connection, smart classroom, Auditorium, library,canteen"
+college intake,"For IT, Computer and extc 60 per branch and seat may be differ for different department."
+uniform,ENTER YOUR OWN UNIVERSITY UNIFORM CIRCULER
+committee,For the various committe in college contact this number: ADD NUMBER
+random,"I am not program for this, please ask appropriate query"
+swear,please use appropriate language
+swear,Maintaining decency would be appreciated
+vacation,Academic calender is given to you by your class-soordinators after you join your respective classes
+sports,"Our university encourages all-round development of students and hence provides sports facilities in the campus. For more details visit<a target=""_blank"" href=/""(LINK IF HAVE)"">here</a>"
+salutaion,I am glad I helped you
+salutaion,"welcome, anything else i can assist you with?"
+task,I can answer to low-intermediate questions regarding college
+task,"You can ask me questions regarding college, and i will try to answer them"
+ragging,"We are Proud to tell you that our college provides ragging free environment, and we have strict rules against ragging"
+hod,"HODs differ for each branch, please be more specific like: (HOD it)"
