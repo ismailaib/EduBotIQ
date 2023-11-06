@@ -1,6 +1,6 @@
 # EduBotIQ
 
-![TensorFlow Logo](tensorflow_logo.png)
+![TensorFlow Logo](tensorflow.png)
 
 ## Overview
 
