@@ -4,40 +4,47 @@ from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 import pandas as pd
 import json
+import random
+
+user_id = 2
 
 app = Flask(__name__)
 
-# Load the trained model
-model = tf.keras.models.load_model('education_classifier_model_v2')
+model = tf.keras.models.load_model('education_classifier_model')
 
-# Load the tokenizer and word index
 tokenizer = Tokenizer()
 data = pd.read_csv('training_data.csv')
 texts = data['text'].tolist()
 tokenizer.fit_on_texts(texts)
 word_index = tokenizer.word_index
 
-# Load the label-to-index mapping
 with open('labels_mapping.json', 'r') as json_file:
     label_to_index = json.load(json_file)
 
-# Define the maximum sequence length
+responses = {}
+responses_data = pd.read_csv('responses.csv')
+for index, row in responses_data.iterrows():
+    category = row['tag']
+    response = row['response']
+    if category in responses:
+        responses[category].append(response)
+    else:
+        responses[category] = [response]
+
 max_sequence_length = 10
 
-# Define a function to preprocess and classify the text
 def classify_text(text):
-    # Tokenize and pad the input text
     sequences = tokenizer.texts_to_sequences([text])
     data = pad_sequences(sequences, maxlen=max_sequence_length)
 
-    # Make a prediction using the model
     prediction = model.predict(data)
 
-    # Map the prediction to a label in their original order
     label_index = prediction.argmax()
-    predicted_label = [key for key, value in label_to_index.items() if value == label_index][0]
+    predicted_category = [key for key, value in label_to_index.items() if value == label_index][0]
 
-    return predicted_label
+    response = random.choice(responses.get(predicted_category, ["I'm not sure how to respond to that."]))
+
+    return response
 
 @app.route('/')
 def index():
@@ -46,8 +53,8 @@ def index():
 @app.route('/classify', methods=['POST'])
 def classify():
     text = request.form['text']
-    predicted_label = classify_text(text)
-    return jsonify({'result': predicted_label})
+    predicted_response = classify_text(text)
+    return jsonify({'result': predicted_response})
 
 if __name__ == '__main__':
     app.run(debug=True)

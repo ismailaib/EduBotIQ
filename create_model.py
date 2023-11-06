@@ -48,7 +48,7 @@ model.fit(padded_sequences, labels, epochs=20)
 
 # Save the model
 # Save the model in the recommended Keras format
-model.save('education_classifier_model_v2')  # No file extension needed, it will be saved as a directory
+model.save('education_classifier_model')  # No file extension needed, it will be saved as a directory
 
 # Save labels mapping to a JSON file for use in app.py
 import json
